@@ -37,7 +37,11 @@ export interface ModalImageProps extends React.ImgHTMLAttributes<HTMLImageElemen
 }
 
 declare class ModalImage extends React.Component<ModalImageProps> {}
-declare class Lightbox extends React.Component<ModalImageProps> {}
+
+export type LightboxProps = {
+  onClose?: () => void;
+} & ModalImageProps;
+declare class Lightbox extends React.Component<LightboxProps> {}
 
 export default ModalImage;
 export { Lightbox };
